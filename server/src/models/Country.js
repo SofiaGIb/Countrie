@@ -6,7 +6,8 @@ module.exports = (sequelize) => {
   sequelize.define('Country', {
     id:{
       type : DataTypes.STRING(3),
-      default : DataTypes.UUIDV4,
+allowNull:false,
+unique:true,
       validate :{
         is: /^[a-zA-Z]{3}$/,
         msg: "Debe contener 3 letras!!"
@@ -54,6 +55,7 @@ module.exports = (sequelize) => {
 
     }
   },
-  {  timestamps:false}
+  {  timestamps:false,
+  freezeTableName :true }
 );
 };

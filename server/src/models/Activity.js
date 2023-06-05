@@ -4,8 +4,10 @@ module.exports = (sequelize) =>{
 sequelize.define('Activity',{
 id:{
     primaryKey: true,
-    type : DataTypes.UUID,
-    default : DataTypes.UUIDV4,
+    type : DataTypes.INTEGER,
+    autoIncrement :true,
+    unique :true,
+    allowNull:false
 },
 name:{ 
     type: DataTypes.TEXT,
@@ -39,6 +41,7 @@ temporada:{
 }
 
 },{
-    timestamps:false
+    timestamps:false,
+    freezeTableName :true
 })
 }

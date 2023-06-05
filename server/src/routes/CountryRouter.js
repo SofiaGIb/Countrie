@@ -1,8 +1,11 @@
 const {Router} =  require ('express');
-import { GetCountry,IdCountry } from '../handlers/CountryHdl';
+const { allpaises,IdCountry} = require ('../Handlers/CountryHdl')
+
 const CountryRouter = Router()
 
-CountryRouter.get("/",GetCountry);
+CountryRouter.get("/",allpaises);
 
 
 CountryRouter.get("/:id",IdCountry);
+ 
+module.exports = CountryRouter

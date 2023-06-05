@@ -1,5 +1,4 @@
 
-
 const GetActivity=  async (req,res) =>{};
 
 const PostActivity = async ( req,res) => {};

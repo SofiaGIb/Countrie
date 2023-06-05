@@ -1,5 +1,5 @@
 const {Router} = require('express');
-import { PostActivity,GetActivity } from '../handlers/ActivityHdl';
+const { PostActivity,GetActivity } = require( '../handlers/ActivityHdl');
 
 
 const ActivityRouter =  Router();
