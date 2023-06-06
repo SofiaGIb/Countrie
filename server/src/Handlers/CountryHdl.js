@@ -1,34 +1,36 @@
-const { CountryByName,todoslospaises} = require( "../Controllers/CountryControllers");
+const {countryByName,getAllCountrie, countryById,} = require( "../Controllers/CountryControllers");
 
 
-const allpaises = async ( req,res) =>
+const allCountries = async ( req,res) =>
 {
-    try {
-        const rersponse = await todoslospaises
+try {        
+        const response = await getAllCountrie()
 
-        return res.status(200).json(response)
+        return res.status(200).json(response);
    } catch (error) {
        
-       res.status(400).send("El pais ingresa existe!!")
+    res.status(400).json({ error: error.message });
 }
 }
 
-const GetCountry = async (req, res) => {
-    const { name } = req.query;
+const countryName = async (req, res) => {
+        }
+  
+
+const IdCountry = async (req, res) => {
+    const {id} = req.params 
     try {
-        if (name) {
-            const response = await CountryByName(name);
-                    return res.status(200).json(response)
-        }
+        const response = await countryById(id)
+        res.status(200).json(response)
+        
     } catch (error) {
-        res.status(400).send("El pais con el nombre ingresado no existe!!")
+        res.status(400).json({error:error.message})
+        
     }
 };
 
-const IdCountry = async (req, res) => {};
-
 module.exports = {
-  GetCountry,
+    countryName,
   IdCountry,
-  allpaises
+    allCountries
 };

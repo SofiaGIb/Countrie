@@ -1,11 +1,9 @@
 const {Router} =  require ('express');
-const { allpaises,IdCountry} = require ('../Handlers/CountryHdl')
+const { allCountries,IdCountry,countryName} = require ('../Handlers/CountryHdl')
 
 const CountryRouter = Router()
 
-CountryRouter.get("/",allpaises);
-
-
-CountryRouter.get("/:id",IdCountry);
- 
+CountryRouter
+.get("/",allCountries)
+.get("/:id",IdCountry)
 module.exports = CountryRouter

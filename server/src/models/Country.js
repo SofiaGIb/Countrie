@@ -1,61 +1,55 @@
-const { DataTypes } = require('sequelize');
+const { DataTypes } = require("sequelize");
 // Exportamos una funcion que define el modelo
 // Luego le injectamos la conexion a sequelize.
 module.exports = (sequelize) => {
   // defino el modelo
-  sequelize.define('Country', {
-    id:{
-      type : DataTypes.STRING(3),
-allowNull:false,
-unique:true,
-      validate :{
-        is: /^[a-zA-Z]{3}$/,
-        msg: "Debe contener 3 letras!!"
+  sequelize.define( 'Country',
+    {
+      id: {
+        type: DataTypes.STRING(3),
+        allowNull: false,
+        unique: true,
+        primaryKey: true,
       },
-      primaryKey:true,
+      cca3: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+  
+
+      name: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        unique: true,
+      },
+      imagen: {
+        type: DataTypes.STRING,
+        validate: {
+          msg: "Debes ingresar la info",
+        },
+      },
+      continente: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+          msg: "Debes ingresar la info",
+        },
+      },
+      capital: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+          msg: "Debes ingresar la info",
+        },
+      },
+      poblacion: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+          msg: "Debes ingresar la info",
+        },
+      },
     },
-    name: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      unique : true
-    },
-    imagen_bandera:{
-      type : DataTypes.STRING,
-      allowNull :false,
-      validate :{
-        msg : "Debes ingresar la info"}
-
-    },
-    continente : {
-      type: DataTypes.STRING,
-      allowNull:false,
-      validate :{
-        msg : "Debes ingresar la info"}
-
-
-
-    },
-    capital:{
-      type: DataTypes.STRING,
-      allowNull : false,
-      validate :{
-        msg : "Debes ingresar la info"}
-
-
-
-
-    },
-    poblacion:{
-      type:DataTypes.STRING,
-      allowNull: false ,
-      validate :{
-        msg : "Debes ingresar la info"}
-
-
-
-    }
-  },
-  {  timestamps:false,
-  freezeTableName :true }
-);
+    { timestamps: false, freezeTableName: true }
+  );
 };
