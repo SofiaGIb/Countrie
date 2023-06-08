@@ -1,4 +1,4 @@
-const { allActivity,createActivity } = require ("../Controllers/ActivityControllers");
+const { allActivity,createActivity ,activityDelete} = require ("../Controllers/ActivityControllers");
 
 
 const GetActivity=  async (req,res) =>{
@@ -14,20 +14,29 @@ const GetActivity=  async (req,res) =>{
 
 const PostActivity = async ( req,res) => {
 
-const {name,dificultad,duracion,temporada,countryIds} = req.body
+const {name,dificultad,duracion,temporada,CountryIds} = req.body;
 try {
-    const newActivity = await createActivity(name,dificultad,duracion,temporada,countryIds);
+    const newActivity = await createActivity(name,dificultad,duracion,temporada,CountryIds);
     res.status(200).json(newActivity);
     
 } catch (error) {
-    res.status(400).json({error:error.message + "rr"})
+    res.status(400).json({error:error.message })
     
 }
 
 };
+const DeleteActivity = async(req,res) => {
+const {id} = req.params;
+    try {
+        await  activityDelete(id);
+        res.status(200).send(`activity ${id} eliminada `)
+    } catch (error) {
+        res.status(400).json({error:error.message})
+    }
+}
 
-module.exports = 
-{
+module.exports = {
+DeleteActivity,
     PostActivity,
     GetActivity
 }
