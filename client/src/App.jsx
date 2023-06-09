@@ -1,21 +1,26 @@
-import { useState } from 'react'
-import { Router  } from 'express'
+import { useState } from "react";
+ import { Home, Landing, Detail, Formulario } from "./views/Index";
+import { Routes ,Route} from "react-router-dom";
 
-
-
-import Home from "./views/Home/Home"
-
+import NavBar from "./componentes/NavBar/NavBar";
 function App() {
-  const [count, setCount] = useState(0)
-
+  const [count, setCount] = useState(0);
 
   return (
-  
     <div>
-<Home/>
-      <h1>COUNTRIES</h1>
+<NavBar/>
+<Routes>
+
+       <Route path="/" element={<Landing/>} />
+       <Route path="/Detail" element={<Detail/>} />
+      <Route path="/Home" element={<Home/>} />
+      <Route path="/Create" element={<Formulario/>} />
+
+</Routes>
+
+  <h1>COUNTRIES</h1>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
