@@ -1,0 +1,11 @@
+.texto{
+    background-color: blue;
+}
+
+.buttoncontainer{
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    margin-top: auto;
+
+}

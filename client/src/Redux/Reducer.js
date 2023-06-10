@@ -9,6 +9,7 @@ const initialState = {
 };
 
 const rootReducer = (state = initialState, action) => {
+  
   switch (action.type) {
     case GET_COUNTRIES:
       return {

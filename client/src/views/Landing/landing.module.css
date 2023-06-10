@@ -1,0 +1,16 @@
+.img {
+background-image: url("../../img/glenn-carstens-peters-ZWD3Dx6aUJg-unsplash.jpg");
+
+position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw; /* El ancho de la ventana gráfica visible */
+  height: 100vh;
+  object-fit: contain;
+  background-position: center;
+  background-size: cover;
+  }
+  
+.botton{
+    border: 0cap;
+}

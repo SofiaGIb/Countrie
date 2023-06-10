@@ -26,7 +26,6 @@ function Home() {
   }, []);
   return (
     <div className="home">
-      <h1 className="home-title"> home</h1>
       <Paginado
         CountryPage={CountryPage}
         countries={countries}

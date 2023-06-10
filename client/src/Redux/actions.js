@@ -25,8 +25,8 @@ export const DETAIL_COUNTRY = "DETAIL_COUNTRY";
 
 export const countryDetail =(id)=>{
     return async   function(dispatch) {
-  const   details = await axios.get(`/Country${id}`);
-const data = details.data;
+        const   details = await axios.get(`/Country/${id}`);
+        const data = details.data;
 dispatch({
     type : DETAIL_COUNTRY,
     payload : data

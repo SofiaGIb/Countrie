@@ -9,7 +9,6 @@ return peticion
 
 
 const countryByName = async (name)=>{
-    console.log(name);
    if(name){
        const byName = await Country.findAll( {
            where:{

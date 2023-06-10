@@ -1,11 +1,18 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { Link } from "react-router-dom";
+import style from "./landing.module.css"
 
- function Landing() {
+
+function Landing() {
   return (
-    <div>
-      LANDING
+    <div >
+      <div className={style.img}>
+      <Link to="/Home">
+        <button>Home</button>
+      </Link>
+      </div>
+
     </div>
-  )
+  );
 }
-export default Landing
+export default Landing;

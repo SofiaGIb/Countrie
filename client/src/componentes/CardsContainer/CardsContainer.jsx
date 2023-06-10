@@ -9,7 +9,7 @@ function CardsContainer({tencountry}) {
       {countries.map(country=>{
         return  <Card
         id ={country.id}
-        cca3 ={country.cca3}
+        key ={country.id}
       name ={country.name}
       imagen={country.imagen}
 
