@@ -5,15 +5,14 @@ const {
 } = require("../Controllers/CountryControllers");
 
 const allCountries = async (req, res) => {
-  const { name } = req.query;
-  console.log(name);
+  const { name ,limit } = req.query;
   try {
-      const response = name ? await countryByName(name) : await getAllCountrie();
+      const response = name ? await countryByName(name) : await getAllCountrie(parseInt(limit));
       console.log(response);
       if (response.length < 1) throw new Error("Not found Countries");
       return res.status(200).json(response);
     } catch (error) {
-        res.status(400).json({ error: error.message + "PTORD" });
+        res.status(400).json({ error: error.message  });
     }
 };
 

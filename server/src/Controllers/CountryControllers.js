@@ -1,8 +1,9 @@
 const {Country,Activity} = require ('../db');
 const {Op} = require('sequelize')
-const getAllCountrie =  async ( ) => {
-     
-const peticion = await Country.findAll()
+const getAllCountrie =  async ( limit) => {
+const peticion = await Country.findAll({
+    limit:limit
+})
 return peticion
 }
 

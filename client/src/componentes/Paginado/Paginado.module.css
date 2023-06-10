@@ -1,0 +1,95 @@
+.pagination {
+    display: flex;
+    justify-content: center;
+    padding: 15px 5px 5px;
+    width: 100px;
+
+}
+
+.pages {
+    padding: 1px 300px;
+    display: flex;
+    flex-direction: row;    
+    background-color: rgb(254, 254, 248);
+    display: flex;
+    list-style-type:none;
+    justify-content: center;
+	box-shadow: 9px 10px 7px #ac9742;
+	padding: 0 20px 15px;
+	border-radius: 7px;
+    position: absolute;
+    top: 19%;
+    left: 33%;
+}
+
+.pages a:hover{
+    background-color: #49cead;
+    color:  rgb(231, 218, 218);
+}
+.page {
+    list-style-type:none;   
+}
+
+.pageBtn {
+    cursor: pointer;
+    display: flex;    
+    justify-content: center;
+	background-color:transparent;
+    border-color: rgb(231, 218, 218);
+    box-shadow: 4px 5px 3px rgb(112, 44, 44);
+    color:  rgb(6, 6, 75);
+    font-style: italic;
+    font-weight: 1000;    
+    text-shadow: 19px 28px 28px rgba(0,0,0,0.43);
+    border-radius: 55px;
+    height: 70px;
+	font-size: 35px;	
+	line-height: 58px;
+    font-weight: 700;
+    margin: 0 33px;
+} 
+
+.pageBtn :hover {
+    background-color: #ce5249;
+    color: rgb(231, 218, 218);
+}
+
+.icon {
+    width: 10px;
+}
+.num{
+   display: flex;
+   justify-content: space-between;
+   border-radius: 20px;
+      padding: 20px;
+      font-size: 100px;
+}
+
+.ul{
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    color: rgb(24, 24, 24);
+    
+}
+.container {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50% ;
+    height: 4rem;
+    width: 4rem;
+    border: 1px solid #f6eedf;
+    margin-bottom: 2rem;
+    cursor: pointer;
+    font-size: 4.6rem;
+    margin-top: 1rem;
+    background-color: transparent;
+
+}
+
+.pagination {
+    margin-top: 5rem;
+}

@@ -7,7 +7,7 @@ const GetActivity=  async (req,res) =>{
         const allActivities = await allActivity();
         return res.status(200).json(allActivities)
     } catch (error) {
-        res.status(400).json({error:error.message + "ff"})
+        res.status(400).json({error:error.message })
         
     }
 };

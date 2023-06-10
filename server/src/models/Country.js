@@ -24,9 +24,7 @@ module.exports = (sequelize) => {
       },
       imagen: {
         type: DataTypes.STRING,
-        validate: {
-          msg: "Debes ingresar la info",
-        },
+        allowNull: false,
       },
       continente: {
         type: DataTypes.STRING,

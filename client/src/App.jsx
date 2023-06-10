@@ -1,6 +1,9 @@
 import { useState } from "react";
  import { Home, Landing, Detail, Formulario } from "./views/Index";
 import { Routes ,Route} from "react-router-dom";
+import axios from 'axios'
+axios.defaults.baseURL = 'http://localhost:3001/'
+
 
 import NavBar from "./componentes/NavBar/NavBar";
 function App() {
