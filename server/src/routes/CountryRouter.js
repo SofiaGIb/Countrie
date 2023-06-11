@@ -5,5 +5,6 @@ const CountryRouter = Router()
 
 CountryRouter
 .get("/",allCountries)
+.get('/?name',allCountries)
 .get("/:id",IdCountry)
 module.exports = CountryRouter

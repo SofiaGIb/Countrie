@@ -1,13 +1,13 @@
 .pagination {
     display: flex;
     justify-content: center;
-    padding: 15px 5px 5px;
-    width: 100px;
+    padding: 10px 5px 5px;
+    width: 10px;
 
 }
 
 .pages {
-    padding: 1px 300px;
+    padding: 1px 30px;
     display: flex;
     flex-direction: row;    
     background-color: rgb(254, 254, 248);
@@ -15,11 +15,11 @@
     list-style-type:none;
     justify-content: center;
 	box-shadow: 9px 10px 7px #ac9742;
-	padding: 0 20px 15px;
+	padding: 0 10px 10px;
 	border-radius: 7px;
     position: absolute;
-    top: 19%;
-    left: 33%;
+    top: 9%;
+    left: 6%;
 }
 
 .pages a:hover{
@@ -39,14 +39,14 @@
     box-shadow: 4px 5px 3px rgb(112, 44, 44);
     color:  rgb(6, 6, 75);
     font-style: italic;
-    font-weight: 1000;    
-    text-shadow: 19px 28px 28px rgba(0,0,0,0.43);
-    border-radius: 55px;
-    height: 70px;
-	font-size: 35px;	
-	line-height: 58px;
-    font-weight: 700;
-    margin: 0 33px;
+    font-weight: 20;    
+    text-shadow: 19px 20px 20px rgba(0,0,0,0.43);
+    border-radius: 45px;
+    height: 60px;
+	font-size: 20px;	
+	line-height: 20px;
+    font-weight: 500;
+    margin: 0 10px;
 } 
 
 .pageBtn :hover {
@@ -62,14 +62,14 @@
    justify-content: space-between;
    border-radius: 20px;
       padding: 20px;
-      font-size: 100px;
+      font-size: 70px;
 }
 
 .ul{
     list-style-type: none;
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 10px;
     color: rgb(24, 24, 24);
     
 }
@@ -91,5 +91,5 @@
 }
 
 .pagination {
-    margin-top: 5rem;
+    margin-top: 6rem;
 }

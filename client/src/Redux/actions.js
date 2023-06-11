@@ -6,7 +6,7 @@ export const GET_COUNTRIES = "GET_COUNTRIES";
 
 export const allcountries = ()=>{
 return async function (dispatch) {
-const response = await axios.get('/Country',{
+const response = await axios.get('/Country/',{
     params: {limit:100}
 });
 
@@ -33,4 +33,17 @@ dispatch({
 })
 
 } }
+ //Nos trae los paises por nombre 
 
+ export const COUNTRY_NAME = "COUNTRY_ NAME";
+ export const country_by_name = (name) =>{
+
+    return async function (dispatch){
+        const response = await axios.get(`/Country/${name}`)
+        const dataName = response.data;
+        dispatch({
+            type : COUNTRY_NAME,
+            payload : dataName
+        })
+    }
+ }

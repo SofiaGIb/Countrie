@@ -10,24 +10,24 @@ return peticion
 
 const countryByName = async (name)=>{
    if(name){
-       const byName = await Country.findAll( {
-           where:{
-                name:{[Op.like]:"%" + name + "%"}
-           },
-            include: {
-            model: Activity, 
-            attibutes : ['id', 'name'],
-            through: {
-              attibutes: [],
-            },
-        } 
-    
-    } )
+       const filter = await Country.findAll({     
+         where: {
+        name: { [Op.like]: `%${name}%` }
+   },
+   include: {
+    model: Activity, 
+    attibutes : ['id', 'name'],
+    through: {
+      attibutes: []
+    }}
+})
+   
+if(filter.length){
+    return filter
+} throw new Error("fallo busqueda")
+}}
 
-    console.log(byName);
-    return byName;
-};
-        }
+    
 
     
 
