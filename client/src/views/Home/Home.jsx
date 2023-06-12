@@ -5,6 +5,7 @@ import { allcountries } from "../../Redux/actions";
 import Paginado from "../../componentes/Paginado/Paginado";
 import { useState } from "react";
 import SearchName from "../../componentes/SearchName/SearchName";
+import style from './Home.module.css'
 function Home() {
   const allcountry = useSelector ((state)=>state.allcountries)
   const countries = useSelector((state) => state.country);
@@ -27,7 +28,7 @@ function Home() {
     dispatch(allcountries());
   }, []);
   return (
-    <div className="home">
+    <div className={style.body}>
       <SearchName/>
       <Paginado
         CountryPage={CountryPage}

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import {useState } from 'react'
 import { useDispatch } from 'react-redux';
 import { country_by_name } from '../../Redux/actions';
 import style from "./search.module.css"
@@ -10,7 +10,7 @@ export default function SearchName() {
    
     
     const handleChange=(event)=>{
-        setName(event.target.value.toLowerCase())
+        setName(event.target.value)
     }
     const dispatch = useDispatch()
     function searchName(name) {

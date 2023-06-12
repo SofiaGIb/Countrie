@@ -15,6 +15,8 @@ const allCountries = async (req, res) => {
     }
 };
 
+
+
 const IdCountry = async (req, res) => {
   const { id} = req.params;
     try {
@@ -25,6 +27,8 @@ const IdCountry = async (req, res) => {
       res.status(400).json({ error: error.message   });
     }
 };
+
+
 
 module.exports = {
   IdCountry,

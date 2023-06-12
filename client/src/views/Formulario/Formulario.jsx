@@ -4,12 +4,22 @@ import style from './form.module.css'
 
 function Formulario() {
   return (
-    <div className={style.imgf}>
+<div>
+
+    <form >
+      <input type="text" />
+    </form>
+
+
       <Link to="/Home">
-      
-      <button>Home</button>
+      <button>Home siempre vccf</button>
       </Link>
     </div>
+
+
+
+
+
   )
 }
 export default Formulario
