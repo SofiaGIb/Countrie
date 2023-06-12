@@ -12,7 +12,8 @@ function Formulario() {
 
 
       <Link to="/Home">
-      <button>Home siempre vccf</button>
+      <button>Home</button>
+      
       </Link>
     </div>
 
