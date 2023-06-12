@@ -5,6 +5,8 @@ import style from './form.module.css'
 function Formulario() {
   return (
     <div className={style.imgf}>
+
+      <form action=""></form>
       <Link to="/Home">
       
       <button>Home</button>
