@@ -40,7 +40,8 @@ dispatch({
 
     return async function (dispatch){
         const response = await axios.get(`/Country/${name}`)
-        const dataName = response.data;
+        const dataName = response.data
+        console.log(dataName);
         dispatch({
             type : COUNTRY_NAME,
             payload : dataName

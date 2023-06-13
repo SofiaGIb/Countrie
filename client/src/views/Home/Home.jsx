@@ -15,7 +15,7 @@ function Home() {
   
   const lastcountry = pages * CountryPage;
   const firstcountry = lastcountry - CountryPage;
-  const tencountry = country.slice(firstcountry, lastcountry);
+  const tencountry = countries.slice(firstcountry, lastcountry);
   
   const pagination = (nambercountries) => {
     setPages(nambercountries);
@@ -32,7 +32,7 @@ function Home() {
       <SearchName/>
       <Paginado
         CountryPage={CountryPage}
-        countries={ country.length}
+        countries={ countries.length}
         pagination={pagination}
         />
       <CardsContainer tencountry={tencountry} />

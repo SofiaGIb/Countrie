@@ -6,16 +6,18 @@ import style from "./search.module.css"
 
 
 export default function SearchName() {
-    const [name ,setName] = useState("")
-    
-    const handleChange=(event)=>{
-        setName(event.target.value)
-    }
+  const [name ,setName] = useState("")
+  
+  const handleChange=(event)=>{
+    setName(event.target.value)
+  }
+  console.log(handleChange );
     const dispatch = useDispatch()
     function searchName(name) {
-        dispatch(country_by_name(name));
-        setName("")
+      dispatch(country_by_name(name));
+      setName("")
     };
+    console.log(searchName);
   return (
         <div className={style.search}>
       <input
@@ -29,7 +31,7 @@ export default function SearchName() {
         className={style.searchButton}
         type="submit"
         onClick={() => searchName(name)}
-      >
+        >
         SEARCH
       </button>
     </div>

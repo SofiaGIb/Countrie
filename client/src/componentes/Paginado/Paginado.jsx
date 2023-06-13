@@ -9,7 +9,7 @@ function Paginados({CountryPage, countries,pagination}) {
   }
   return (
     <div>
-      {paginado.length <=1?
+      {paginado.length <1?
       <>fallo</>:
        <nav className={style.pagination}>
         <ul className={style.pages}>
