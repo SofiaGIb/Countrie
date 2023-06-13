@@ -7,7 +7,7 @@ import { useState } from "react";
 import SearchName from "../../componentes/SearchName/SearchName";
 import style from './Home.module.css'
 function Home() {
-  const allcountry = useSelector ((state)=>state.allcountries)
+  const country = useSelector ((state)=>state.allcountries)
   const countries = useSelector((state) => state.country);
   //Paginado
   const [pages, setPages] = useState(1);
@@ -15,7 +15,7 @@ function Home() {
   
   const lastcountry = pages * CountryPage;
   const firstcountry = lastcountry - CountryPage;
-  const tencountry = countries.slice(firstcountry, lastcountry);
+  const tencountry = country.slice(firstcountry, lastcountry);
   
   const pagination = (nambercountries) => {
     setPages(nambercountries);
@@ -32,7 +32,7 @@ function Home() {
       <SearchName/>
       <Paginado
         CountryPage={CountryPage}
-        countries={ countries.length}
+        countries={ country.length}
         pagination={pagination}
         />
       <CardsContainer tencountry={tencountry} />

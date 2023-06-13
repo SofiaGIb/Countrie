@@ -7,7 +7,6 @@ import style from "./search.module.css"
 
 export default function SearchName() {
     const [name ,setName] = useState("")
-   
     
     const handleChange=(event)=>{
         setName(event.target.value)

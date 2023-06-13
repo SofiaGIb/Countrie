@@ -1,26 +1,11 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import style from './form.module.css'
 
-function Formulario() {
+ function Formulario() {
   return (
-<div>
-
-    <form >
-      <input type="text" />
-    </form>
-
-
-      <Link to="/Home">
-      <button>Home</button>
+    <div>
       
-      </Link>
     </div>
-
-
-
-
-
   )
 }
+
 export default Formulario
