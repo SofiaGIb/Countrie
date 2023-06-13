@@ -1,0 +1,82 @@
+
+.cajafilter {
+    position: absolute;
+  margin-top: 600px;
+  margin-left: 40px;
+  width: 40%;
+  padding: 20px;
+  border: 7px bold rgb(29, 29, 28);
+  }
+  .filters {
+      display: flex;
+      color: rgb(6, 6, 75);
+      font-style: italic;
+      font-weight: 700;    
+      text-shadow: 6px 4px 5px rgba(0,0,0,0.43);
+      padding: 10px 3px 0px;
+  }
+  
+  .select {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      margin-top: 30px;
+      background-color: blueviolet;
+  }
+  .filterContainer {
+      margin-right: 40px; 
+      margin-bottom: 90px;
+  
+    }
+    
+    
+    .titleFilter {
+      font-size: 34px;
+      text-align: left;
+      background-color: #c4b461;  
+      border-radius: 7px;
+    }
+    span {
+      margin-right: 9px; 
+    }
+    
+    select {
+      border: 2px solid #11120d;
+      line-height: 2.5; 
+      padding:32px; 
+    }
+    
+    
+    .resetButton {
+      background-color: #abcdcb;
+      border: 2px bold rgb(62, 59, 59);
+      color: #272626;
+      padding: 5px 10px;
+      border-radius: 5px;
+      outline: none;
+      cursor: pointer;
+      width: 235px;
+      display: flex;
+      margin-left: 30px;
+      font-weight: bold;
+      font-size: 25px;
+  
+    }
+    
+    .resetButton:hover {
+      background-color:#ff5d6c;
+      color: antiquewhite;
+      font-size: 25px;
+      font-weight: bold;
+      text-align: center;
+      width: 235px;
+      margin-left: 30px;
+      padding: 12px 5px;
+      border: 2px bold rgb(62, 59, 59);
+  
+  
+    }
+    
+    
+    

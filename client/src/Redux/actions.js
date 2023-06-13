@@ -39,12 +39,70 @@ dispatch({
  export const country_by_name = (name) =>{
 
     return async function (dispatch){
-        const response = await axios.get(`/Country/${name}`)
+        const response = await axios.get(`/Country/name?name=${name}`)
         const dataName = response.data
-        console.log(dataName);
         dispatch({
             type : COUNTRY_NAME,
             payload : dataName
         })
     }
  }
+
+ // CREA UNA NUEVA ACTVIDAD 
+
+ export const NEW_ACTIVITY = " NEW_ACTIVITY"
+export const create_activity = (payload )=>{
+    return async function (dispatch){
+        try {
+            
+            let newActivity =  await axios.post(`/Activity/`,payload)
+            return newActivity
+        } catch (error) {
+            console.log(error);
+            
+        }
+    }
+}
+
+ // ELIMINA LA ACTIVIDAD 
+ export const DELETE_ACTIVITY = "DELETE_ACTIVITY"
+ export const deleteActivity = (id)=>{
+
+    return async function (dispatch){
+        console.log("Borrando receta con id: ", id);
+
+        try {
+            if (!/^[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89ab][a-f0-9]{3}-[a-f0-9]{12}$/i.test(id)) {
+                throw new Error("Formato invalido");
+              }          
+             await axios.delete(`/Activity/${id}`)
+        } catch (error) {
+            
+        }
+    }
+ }
+
+
+ // NOS TRAE TODAS LAS ACTIVIDADES 
+
+ export const ALL_ACTIVITY = "ALL_ACTIVITY"
+ export const allActivities = ()=>{
+    return async function (dispatch){
+    try {
+        let activities = await axios.get(`/Activity/`)
+        console.log(activities);
+        return activities
+    } catch (error) {
+        console.log(error);
+    } }
+ }
+
+ // FILTRA POR NAME 
+
+ export const ORDEN_ALFABETICO = "ORDEN_ALFABETICO";
+export function alphabeticalSort(payload) {
+  return {
+    type: ORDEN_ALFABETICO,
+    payload,
+  };
+}

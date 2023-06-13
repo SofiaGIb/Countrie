@@ -11,13 +11,11 @@ export default function SearchName() {
   const handleChange=(event)=>{
     setName(event.target.value)
   }
-  console.log(handleChange );
     const dispatch = useDispatch()
     function searchName(name) {
       dispatch(country_by_name(name));
       setName("")
     };
-    console.log(searchName);
   return (
         <div className={style.search}>
       <input

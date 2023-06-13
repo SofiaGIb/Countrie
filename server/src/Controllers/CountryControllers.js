@@ -12,7 +12,7 @@ const countryByName = async (name)=>{
    if(name){
        const filter = await Country.findAll({     
          where: {
-        name: { [Op.like]: `%${name}%` }
+        name: {[Op.iLike]: "%" + name +"%"}
    },
    include: {
     model: Activity, 
