@@ -1,63 +1,106 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { useState } from "react";
+import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import { allcountries, allActivities } from "../../Redux/actions";
+import { useEffect } from "react";
 
 function Formulario() {
+  const dispatch = useDispatch();
+  const country = useSelector((state) => state.country);
+
+  useEffect(() => {
+    if (country.length === 0) {
+      dispatch(allcountries());
+    }
+  }, [dispatch, country]);
+
   const [form, setForm] = useState({
     name: "",
     dificultad: "",
-    duracion: "",
+    duración: "",
     temporada: "",
-    paises: [],
+    CountryIds: "",
   });
 
   const changeHandler = (event) => {
-    const property = event.target.Name;
+    const property = event.target.name;
     const value = event.target.value;
     setForm({ ...form, [property]: value });
   };
+
+  const submitHandler = (event) => {
+    event.preventDefault();
+    axios
+      .post("/Activity/", {
+        name: form.name,
+        dificultad: form.dificultad,
+        duracion: form.duración,
+        temporada: form.temporada,
+        CountryIds: form.CountryIds,
+      })
+
+      .then((res) => alert("creado con exito "))
+      .catch((err) => alert(err.response.data.error));
+  };
+
+  const handleId = (event) => {
+    setForm({ ...form, CountryIds: event.target.value });
+  };
+
   return (
     <div>
-      <form action="">
-        <label htmlFor="">Nombre</label>
+      <form>
+        <label>Nombre</label>
         <input
           type="text"
           value={form.name}
-          Name="name"
+          name="name"
           onChange={changeHandler}
         />
-        <label htmlFor="">Dificultad</label>
+        <label>Dificultad</label>
         <input
-          type="text"
+          type="number"
           value={form.dificultad}
-          Name="dificultad"
+          name="dificultad"
           onChange={changeHandler}
         />
-        <label htmlFor="">Duración</label>
+        <label>Duración</label>
         <input
-          type="text"
+          type="time"
           value={form.duración}
-          Name="duración"
+          name="duración"
           onChange={changeHandler}
         />
-        <label htmlFor="">Temporada</label>
-        <input
-          type="text"
-          value={form.temporada}
-          Name="temporada"
-          onChange={changeHandler}
-        />
-        <label htmlFor="">Paises</label>
+        <label>Temporada</label>
         <select
-          name=""
-          id=""
-          value={form.paises}
-          Name="paises"
+          value={form.temporada}
+          name="temporada"
           onChange={changeHandler}
-        ></select>
+        >
+          <option value="verano">Verano</option>
+          <option value="otoño">Otoño</option>
+          <option value="invierno">Invierno</option>
+          <option value="primavera">Primavera</option>
+        </select>
+        <label>CountryIds</label>
+        <select onChange={(event) => handleId(event)}>
+          <option value="-">CountryIds</option>
+
+          {country.map((t) => (
+            <option value={t.id} key={t.id}>
+              {t.id}
+            </option>
+          ))}
+        </select>
         <div>
-          <button>Submit</button>
+          <button onClick={(event) => submitHandler(event)}>Submit</button>
         </div>
       </form>
+      <Link to="/home">
+        <button>home</button>
+      </Link>
     </div>
   );
 }

@@ -1,13 +1,13 @@
 .pagination {
     display: flex;
     justify-content: center;
-    padding: 10px 5px 5px;
+    padding: 3px 3px 3px;
     width: 10px;
 
 }
 
 .pages {
-    padding: 1px 30px;
+    padding: 1px 5px;
     display: flex;
     flex-direction: row;    
     background-color: rgb(254, 254, 248);
@@ -15,7 +15,7 @@
     list-style-type:none;
     justify-content: center;
 	box-shadow: 9px 10px 7px #ac9742;
-	padding: 0 10px 10px;
+	padding: 5px 5px;
 	border-radius: 7px;
     position: absolute;
     top: 9%;
@@ -60,9 +60,9 @@
 .num{
    display: flex;
    justify-content: space-between;
-   border-radius: 20px;
-      padding: 20px;
-      font-size: 70px;
+   border-radius: 10px;
+      padding:5px;
+      font-size: 30px;
 }
 
 .ul{
@@ -79,17 +79,17 @@
     align-items: center;
     justify-content: center;
     border-radius: 50% ;
-    height: 4rem;
-    width: 4rem;
+    height: 2rem;
+    width: 2rem;
     border: 1px solid #f6eedf;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     cursor: pointer;
-    font-size: 4.6rem;
+    font-size: 1.6rem;
     margin-top: 1rem;
     background-color: transparent;
 
 }
 
 .pagination {
-    margin-top: 6rem;
+    margin-top: 1rem;
 }

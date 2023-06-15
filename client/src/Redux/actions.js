@@ -6,9 +6,7 @@ export const GET_COUNTRIES = "GET_COUNTRIES";
 
 export const allcountries = ()=>{
 return async function (dispatch) {
-const response = await axios.get('/Country/',{
-    params: {limit:100}
-});
+const response = await axios.get('/Country/');
 
 const countrydata = response.data;
 dispatch({
@@ -51,18 +49,17 @@ dispatch({
  // CREA UNA NUEVA ACTVIDAD 
 
  export const NEW_ACTIVITY = " NEW_ACTIVITY"
-export const create_activity = (payload )=>{
-    return async function (dispatch){
-        try {
-            
-            let newActivity =  await axios.post(`/Activity/`,payload)
-            return newActivity
-        } catch (error) {
-            console.log(error);
-            
-        }
-    }
-}
+ export const create_activity = (payload) => {
+    return async function (dispatch) {
+      try {
+        let newActivity = await axios.post(`/Activity/`, payload);
+        return newActivity;
+      } catch (error) {
+        console.log(error);
+      }
+    };
+  };
+  
 
  // ELIMINA LA ACTIVIDAD 
  export const DELETE_ACTIVITY = "DELETE_ACTIVITY"
@@ -105,4 +102,12 @@ export function alphabeticalSort(payload) {
     type: ORDEN_ALFABETICO,
     payload,
   };
+}
+  //FILTRA TIPO DE ACTIVITYE 
+  export const  FILTER_BY_ACTIVITY = "FILTER_BY_ACTIVITY"
+  export function filterByAct(activity) {
+	return {
+		type: FILTER_BY_ACTIVITY,
+		payload: activity,
+	};
 }
