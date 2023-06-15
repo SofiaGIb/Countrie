@@ -7,7 +7,9 @@ const allActivity =  async()=>{
 };
 
 const createActivity =  async(name,dificultad,duracion,temporada,CountryIds)=>{
-
+    if (!name ) {
+        throw new Error("Debe proporcionar un nombre para la actividad");
+      }
 const newActivity = await Activity.create({name,dificultad,duracion,temporada});
 await newActivity.setCountries(CountryIds)
 return newActivity

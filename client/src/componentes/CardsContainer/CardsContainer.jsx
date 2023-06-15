@@ -4,7 +4,6 @@ import { useSelector } from 'react-redux'
 
 function CardsContainer({tencountry}) {
   const countries = useSelector(state =>state.country) 
-  console.log(countries);
   return (
     <div className={style.cardc}>
       { tencountry?(tencountry.map((countries)=>{       

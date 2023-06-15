@@ -87,7 +87,11 @@ dispatch({
     return async function (dispatch){
     try {
         let activities = await axios.get(`/Activity/`)
-        return activities
+        const data = activities.data
+        dispatch({
+          type:ALL_ACTIVITY,
+          payload : data
+        })
     } catch (error) {
         console.log(error);
     } }
@@ -109,4 +113,24 @@ export function alphabeticalSort(payload) {
 		type: FILTER_BY_ACTIVITY,
 		payload: activity,
 	};
+}
+//FILTRA POR POBLACION 
+
+export const BY_POPULATION = "BY_POPULATION"
+
+export const filterbypopulation = (payload) =>{
+  return {
+    type : BY_POPULATION,
+    payload 
+  }
+}
+//FILTRA POR CONTINENTE 
+export const BY_CONTINENT = "BY_CONTINENT"
+
+export const filterByContinent = (payload)=>{
+  return {
+    type: BY_CONTINENT,
+    payload
+  }
+
 }

@@ -29,13 +29,13 @@ function Home() {
   }, []);
   return (
     <div className={style.body}>
-      <AllFilters/>
-      <SearchName/>
       <Paginado
         CountryPage={CountryPage}
         countries={ countries.length}
         pagination={pagination}
         />
+      <AllFilters/>
+      <SearchName    setpages ={setPages}  />
       <CardsContainer tencountry={tencountry} />
 
     </div>

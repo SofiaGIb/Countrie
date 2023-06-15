@@ -20,26 +20,48 @@ useEffect(()=>{
 },[details])
 
   return (
-    <div>
-      
-      <h1> name  : {details.name}</h1>
-<h2>id: {details.id}</h2>
-<div>
-<img src={details.imagen} alt="" />
+     <div>
+<div><h3>Name:</h3> {details.name} </div>
+<div><img
+								className={style.banderad}
+								src={details.imagen}
+								alt='Imagen no disponible'
+							/></div>
+<div><h3>Poblacion</h3>{details.poblacion}</div>
+<div><h3>Continente</h3> {details.continente}</div>
+<div><h3>Capital</h3>{details.capital}</div>
+<div><h3>Actividad</h3>
+{details.Activities && details.Activities.length ?(
+  details.Activities?.map((elem)=>{
+    return (
+    <div key={elem.id}>
+    <h4 >
+										{elem.name}
+									</h4>
+									<p >
+										Dificultad: {elem.dificultad}
+									</p>
+									<p >
+										Duración: {elem.duracion} horas
+									</p>
+									<p >
+										Temporada: {elem.temporada}
+									</p>
+   </div>
+    );
+  })
+) : (
+  <p>No existe actividad en este pais aun 
+  <Link to="/Create"> <h2>Crea una actividad</h2> </Link></p>
+ 
+)}
 </div>
-<div>continente : {details.continente}</div>
-<div>poblacion :{details.poblacion}</div>
-<div>Capital : {details.capital}</div> 
 <div>
-
 <Link to="/Home">
 <button className={style.buttoncontainer}>GO BACK </button>
 </Link>
 </div>
 
-<div>
-  <Link to="/Create"><h3>Crea una actividad para este pais </h3></Link>
-</div>
     </div>
   )
 }

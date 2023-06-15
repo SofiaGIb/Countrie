@@ -5,31 +5,30 @@ import {
   alphabeticalSort,
   allActivities,
   filterByAct,
+  filterbypopulation,
+  filterByContinent,
 } from "../../Redux/actions";
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 
-
 function AllFilters() {
   const dispatch = useDispatch();
-  const [activity, setActivity] = useState("");
   useEffect(() => {
     dispatch(allActivities());
     dispatch(allcountries());
   }, [dispatch]);
 
-  const activities = useSelector((state) => state.activity);
   const countries = useSelector((state) => state.country);
- 
- //filter activities
+  //filter activities
+  const [activity, setActivity] = useState("");
+  const activities = useSelector((state) => state.activities);
   const handleActivity = (event) => {
-    event.preventDefault();
-    setActivity(event.target.value);
-    dispatch(filterByAct(event.target.value));
+    const selectedActivity = event.target.value;
+    dispatch(filterByAct(selectedActivity));
   };
-// orden alfabetico
-  const handleSortChange = (event) => {
 
+  // orden alfabetico
+  const handleSortChange = (event) => {
     if (event.target.value === "AtoZ") {
       const sortedCountries = countries
         .slice()
@@ -42,13 +41,28 @@ function AllFilters() {
       dispatch(alphabeticalSort(sortedCountries));
     }
   };
+  //filter population
+  const [population, setPopulation] = useState("");
+
+  function handleSortPop(event) {
+    event.preventDefault();
+    setPopulation(event.target.value);
+    dispatch(filterbypopulation(event.target.value));
+  }
+  // filter continente
+	const [continente, setContinente] = useState('');
+  function handleFilteredCountrie(event) {
+		setContinente(event.target.value);
+		dispatch(filterByContinent(event.target.value));
+	}
+
   return (
-    <div>
-      <span className={style.titleFilter}>Filter By : </span>
+    <div className={style.cajafilter}>
+
+      <span >Filter By : </span>
       <select
         defaultValue="Order By"
         onChange={handleSortChange}
-        style={{ width: "180px" }}
       >
         <option value="Order By" disabled="disabled">
           Order By
@@ -57,36 +71,60 @@ function AllFilters() {
         <option value="ZtoA">Z-A</option>
       </select>
 
-      <span> poblacion </span>
-      <select name="" id="">
-        <option value=""></option>
-        <option value=""></option>
-      </select>
 
       <span> continente </span>
-      <select onChange={(event) => handleActivity(event)}>
-        <option value=""></option>
-        <option value=""></option>
+      <select
+   
+        onChange={(event) => handleFilteredCountrie(event)}
+        value={continente}
+      >
+        <option value={continente === "All" ? continente : "All"}>Todos</option>
+        <option value={continente === "Americas" ? continente : "Americas"}>
+          Americas
+        </option>
+        <option value={continente === "Africa" ? continente : "Africa"}>
+          África
+        </option>
+        <option value={continente === "Asia" ? continente : "Asia"}>Asia</option>
+        <option value={continente === "Europe" ? continente : "Europe"}>
+          Europa
+        </option>
+        <option value={continente === "Oceania" ? continente : "Oceania"}>
+          Oceanía
+        </option>
+        <option value={continente === "Antarctica" ? continente : "Antarctica"}>
+          Antárctica
+        </option>
       </select>
 
 
-      <span> by activity </span>
-      <select  value={activity}
- onChange={(event) => handleActivity(event)}>
-              <option>
-                Todas
-              </option>
-              <option value={activity === "none" ? activity : "none"}></option>
-              {activities.map((e) => (
-                <option
-                  value={activity === e.name ? activity : e.name}
-                  key={e.id}
-                >
-                  {e.name}
-                </option>
+      <span> activity </span>
+      <select onChange={(event) => handleActivity(event)}>
+        {activities.map((ac) => (
+          <option key={ac.id} value={ac.name}>
+            {ac.name}
+          </option>
         ))}
       </select>
-    </div>
+
+
+
+
+      <span>poblacion </span>
+      <select
+        onChange={(e) => handleSortPop(e)}
+        value={population}
+      >
+        <option value={population === "All" ? population : "All"}>Todos</option>
+        <option value={population === "mayp" ? population : "mayp"}>
+          Menor a Mayor
+        </option>
+        <option value={population === "menp" ? population : "menp"}>
+          Mayor a Menor
+        </option>
+    </select>
+
+  </div>
   );
 }
 export default AllFilters;

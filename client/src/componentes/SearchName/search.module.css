@@ -10,7 +10,7 @@
     rgba(252, 251, 251, 0.15);
     background:rgb(220, 220, 32);
     opacity: .9;
-    margin-top: 235px;
+    margin-top: 135px;
     margin-left: 990px;
     text-align: center;
     width: 11%;
@@ -63,10 +63,10 @@
     
     .searchInput {
         position: absolute;
-    margin-top: 236px;
+    margin-top: 136px;
     margin-left: 657px;
         margin-bottom: 5px;
-        padding-top: 31px;
+        padding-top: 21px;
         border-radius:17px;
         text-align: center;
         width: 30%;

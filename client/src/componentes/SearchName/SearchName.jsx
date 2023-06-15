@@ -5,7 +5,7 @@ import style from "./search.module.css"
 
 
 
-export default function SearchName() {
+export default function SearchName({setpages}) {
   const [name ,setName] = useState("")
   
   const handleChange=(event)=>{
@@ -15,6 +15,8 @@ export default function SearchName() {
     function searchName(name) {
       dispatch(country_by_name(name));
       setName("")
+      setpages(1)
+      
     };
   return (
         <div className={style.search}>
