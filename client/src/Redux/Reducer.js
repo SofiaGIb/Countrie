@@ -8,7 +8,6 @@ const initialState = {
   details:[],
   activity:[],
   activities:[],
-  filterActivity:{}
 };
 const rootReducer = (state = initialState, action) => {
   
@@ -53,7 +52,7 @@ const rootReducer = (state = initialState, action) => {
                   case FILTER_BY_ACTIVITY:
                     return {
                       ...state,
-                      filterActivity : action.payload
+                      activity : action.payload
                     }
     default: 
       return state;

@@ -3,12 +3,22 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
-import { allcountries, allActivities } from "../../Redux/actions";
+import { allcountries } from "../../Redux/actions";
 import { useEffect } from "react";
+import {validate} from "./validate"
 
 function Formulario() {
   const dispatch = useDispatch();
   const country = useSelector((state) => state.country);
+
+  const [errors,setErrors] = useState ({
+    name: "",
+    dificultad: "",
+    duración: "",
+    temporada: "",
+    CountryIds: "",
+
+  })
 
   useEffect(() => {
     if (country.length === 0) {
@@ -28,6 +38,7 @@ function Formulario() {
     const property = event.target.name;
     const value = event.target.value;
     setForm({ ...form, [property]: value });
+    validate({...form,[property]:value})
   };
 
   const submitHandler = (event) => {
@@ -52,20 +63,25 @@ function Formulario() {
   return (
     <div>
       <form>
+        <div>
+
         <label>Nombre</label>
         <input
           type="text"
           value={form.name}
           name="name"
           onChange={changeHandler}
-        />
+          />
+
+          {errors.name && <span>{erraors.name}</span>}
+        </div>
         <label>Dificultad</label>
         <input
           type="number"
           value={form.dificultad}
           name="dificultad"
           onChange={changeHandler}
-        />
+          />
         <label>Duración</label>
         <input
           type="time"

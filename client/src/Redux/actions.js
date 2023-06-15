@@ -87,7 +87,6 @@ dispatch({
     return async function (dispatch){
     try {
         let activities = await axios.get(`/Activity/`)
-        console.log(activities);
         return activities
     } catch (error) {
         console.log(error);

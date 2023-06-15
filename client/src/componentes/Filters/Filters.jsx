@@ -73,7 +73,7 @@ function AllFilters() {
       <span> by activity </span>
       <select  value={activity}
  onChange={(event) => handleActivity(event)}>
-              <option value={activity === "All" ? activity : "All"}>
+              <option>
                 Todas
               </option>
               <option value={activity === "none" ? activity : "none"}></option>
