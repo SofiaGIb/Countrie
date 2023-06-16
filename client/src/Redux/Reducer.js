@@ -24,7 +24,7 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         country: action.payload,
-        allcountries: action.payload,
+        allCountries: action.payload,
       };
     case DETAIL_COUNTRY:
       return {
@@ -74,8 +74,6 @@ const rootReducer = (state = initialState, action) => {
 			}
     
 
-
-
 case BY_POPULATION:
   let sortedArrPop =
     action.payload === 'mayp'
@@ -88,14 +86,13 @@ case BY_POPULATION:
   };
 
   case BY_CONTINENT:
-    const allCountries = state.country;
+    const allCountries = state.allCountries;
     const continentFilter =
       action.payload === 'All'
         ? allCountries
         : allCountries.filter(
             (e) => e.continente === action.payload
           );
-          console.log(continentFilter);
     return {
       ...state,
       country: continentFilter,

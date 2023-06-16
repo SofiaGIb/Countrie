@@ -16,7 +16,7 @@ function AllFilters() {
   useEffect(() => {
     dispatch(allActivities());
     dispatch(allcountries());
-  }, [dispatch]);
+  },[dispatch]);
 
   const countries = useSelector((state) => state.country);
   //filter activities
@@ -26,7 +26,14 @@ function AllFilters() {
     const selectedActivity = event.target.value;
     dispatch(filterByAct(selectedActivity));
   };
+// refresh filtro
+function handleClearFilters() {
+  setPopulation("All");
+  setContinente("All");
+  setActivity("All");
 
+  return dispatch(allcountries());
+}
   // orden alfabetico
   const handleSortChange = (event) => {
     if (event.target.value === "AtoZ") {
@@ -123,6 +130,13 @@ function AllFilters() {
           Mayor a Menor
         </option>
     </select>
+    <div>
+          <button
+            onClick={handleClearFilters}
+          >
+          Refresh
+          </button>
+        </div>
 
   </div>
   );

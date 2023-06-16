@@ -1,11 +1,12 @@
 import React from "react";
+import style from "./form.module.css"
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { allcountries } from "../../Redux/actions";
 import { useEffect } from "react";
-import {validate} from "./validate"
+import validate from "./validate"
 
 function Formulario() {
   const dispatch = useDispatch();
@@ -19,7 +20,6 @@ function Formulario() {
     CountryIds: "",
 
   })
-
   useEffect(() => {
     if (country.length === 0) {
       dispatch(allcountries());
@@ -31,18 +31,32 @@ function Formulario() {
     dificultad: "",
     duración: "",
     temporada: "",
-    CountryIds: "",
+    CountryIds: [],
   });
 
   const changeHandler = (event) => {
     const property = event.target.name;
     const value = event.target.value;
     setForm({ ...form, [property]: value });
-    validate({...form,[property]:value})
+   setErrors( validate({...form,[property]:value}))
   };
 
   const submitHandler = (event) => {
     event.preventDefault();
+    if (
+      !form.name ||
+      !form.dificultad ||
+      !form.duración ||
+      !form.temporada ||
+      !form.CountryIds
+    ) {
+      return alert('Complete correctamente el formulario antes de enviarlo');
+    }
+    
+    if (Object.keys(errors).length !== 0) {
+      return alert('Corrija los errores antes de enviar el formulario');
+    }
+    
     axios
       .post("/Activity/", {
         name: form.name,
@@ -51,8 +65,23 @@ function Formulario() {
         temporada: form.temporada,
         CountryIds: form.CountryIds,
       })
-
-      .then((res) => alert("creado con exito "))
+      .then((res) => {
+        alert("Creado con éxito");
+        setForm({
+          name: "",
+          dificultad: "",
+          duración: "",
+          temporada: "",
+          CountryIds: [],
+        });
+        setErrors({
+          name: "",
+          dificultad: "",
+          duración: "",
+          temporada: "",
+          CountryIds: "",
+        });
+      })
       .catch((err) => alert(err.response.data.error));
   };
 
@@ -73,7 +102,7 @@ function Formulario() {
           onChange={changeHandler}
           />
 
-          {errors.name && <span>{erraors.name}</span>}
+          {errors.name && <span>{errors.name}</span>}
         </div>
         <label>Dificultad</label>
         <input
@@ -100,18 +129,22 @@ function Formulario() {
           <option value="invierno">Invierno</option>
           <option value="primavera">Primavera</option>
         </select>
-        <label>CountryIds</label>
+        {errors.temporada && (
+          <span>{errors.temporada}</span>
+        )}
+        <label>paises</label>
         <select onChange={(event) => handleId(event)}>
-          <option value="-">CountryIds</option>
+          <option value="-"></option>
 
           {country.map((t) => (
             <option value={t.id} key={t.id}>
-              {t.id}
+              {t.name}
             </option>
           ))}
         </select>
         <div>
-          <button onClick={(event) => submitHandler(event)}>Submit</button>
+          <button onClick={(event) => submitHandler(event)}
+          >Submit</button>
         </div>
       </form>
       <Link to="/home">
