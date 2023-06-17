@@ -16,7 +16,7 @@ function AllFilters() {
   useEffect(() => {
     dispatch(allActivities());
     dispatch(allcountries());
-  },[dispatch]);
+  }, [dispatch]);
 
   const countries = useSelector((state) => state.country);
   //filter activities
@@ -26,14 +26,14 @@ function AllFilters() {
     const selectedActivity = event.target.value;
     dispatch(filterByAct(selectedActivity));
   };
-// refresh filtro
-function handleClearFilters() {
-  setPopulation("All");
-  setContinente("All");
-  setActivity("All");
+  // refresh filtro
+  function handleClearFilters() {
+    setPopulation("All");
+    setContinente("All");
+    setActivity("All");
 
-  return dispatch(allcountries());
-}
+    return dispatch(allcountries());
+  }
   // orden alfabetico
   const handleSortChange = (event) => {
     if (event.target.value === "AtoZ") {
@@ -57,88 +57,93 @@ function handleClearFilters() {
     dispatch(filterbypopulation(event.target.value));
   }
   // filter continente
-	const [continente, setContinente] = useState('');
+  const [continente, setContinente] = useState("");
   function handleFilteredCountrie(event) {
-		setContinente(event.target.value);
-		dispatch(filterByContinent(event.target.value));
-	}
+    setContinente(event.target.value);
+    dispatch(filterByContinent(event.target.value));
+  }
 
   return (
-    <div className={style.cajafilter}>
-
-      <span >Filter By : </span>
-      <select
-        defaultValue="Order By"
-        onChange={handleSortChange}
-      >
-        <option value="Order By" disabled="disabled">
-          Order By
-        </option>
-        <option value="AtoZ">A-Z</option>
-        <option value="ZtoA">Z-A</option>
-      </select>
-
-
-      <span> continente </span>
-      <select
-   
-        onChange={(event) => handleFilteredCountrie(event)}
-        value={continente}
-      >
-        <option value={continente === "All" ? continente : "All"}>Todos</option>
-        <option value={continente === "Americas" ? continente : "Americas"}>
-          Americas
-        </option>
-        <option value={continente === "Africa" ? continente : "Africa"}>
-          África
-        </option>
-        <option value={continente === "Asia" ? continente : "Asia"}>Asia</option>
-        <option value={continente === "Europe" ? continente : "Europe"}>
-          Europa
-        </option>
-        <option value={continente === "Oceania" ? continente : "Oceania"}>
-          Oceanía
-        </option>
-        <option value={continente === "Antarctica" ? continente : "Antarctica"}>
-          Antárctica
-        </option>
-      </select>
-
-
-      <span> activity </span>
-      <select onChange={(event) => handleActivity(event)}>
-        {activities.map((ac) => (
-          <option key={ac.id} value={ac.name}>
-            {ac.name}
+    <div className={style.caja}>
+      <div className={style.div}>
+        <span className={style.span}>Filter By : </span>
+        <select
+          className={style.select}
+          defaultValue="Order By"
+          onChange={handleSortChange}
+        >
+          <option value="Order By" disabled="disabled">
+            Order By
           </option>
-        ))}
-      </select>
+          <option value="AtoZ">A-Z</option>
+          <option value="ZtoA">Z-A</option>
+        </select>
+        <span className={style.span}> Continente: </span>
+        <select
+          className={style.select}
+          onChange={(event) => handleFilteredCountrie(event)}
+          value={continente}
+        >
+          <option value={continente === "All" ? continente : "All"}>
+            Todos
+          </option>
+          <option value={continente === "Americas" ? continente : "Americas"}>
+            Americas
+          </option>
+          <option value={continente === "Africa" ? continente : "Africa"}>
+            África
+          </option>
+          <option value={continente === "Asia" ? continente : "Asia"}>
+            Asia
+          </option>
+          <option value={continente === "Europe" ? continente : "Europe"}>
+            Europa
+          </option>
+          <option value={continente === "Oceania" ? continente : "Oceania"}>
+            Oceanía
+          </option>
+        </select>
+      </div>
 
+      <div className={style.div}>
+        <span className={style.span}> Activity : </span>
+        
+        <select
+          onChange={(event) => handleActivity(event)}
+          className={style.select}
+          value={activity}
+        >
+         
+          {activities.map((ac) => (
+            <option key={ac.id} value={ac.name}>
+              {ac.name}
+            </option>
+          ))}
+        </select> 
+        <span className={style.span}>Poblacion: </span>
+        <select
+          onChange={(e) => handleSortPop(e)}
+          value={population}
+          className={style.select}
+        >
+          <option value={population === "All" ? population : "All"}>
+            Todos
+          </option>
+          <option value={population === "mayp" ? population : "mayp"}>
+            Menor a Mayor
+          </option>
+          <option value={population === "menp" ? population : "menp"}>
+            Mayor a Menor
+          </option>
+        </select>
+      </div>
 
-
-
-      <span>poblacion </span>
-      <select
-        onChange={(e) => handleSortPop(e)}
-        value={population}
-      >
-        <option value={population === "All" ? population : "All"}>Todos</option>
-        <option value={population === "mayp" ? population : "mayp"}>
-          Menor a Mayor
-        </option>
-        <option value={population === "menp" ? population : "menp"}>
-          Mayor a Menor
-        </option>
-    </select>
-    <div>
-          <button
-            onClick={handleClearFilters}
-          >
+      <div>
+        <button onClick={handleClearFilters} className={style.button}>
           Refresh
-          </button>
-        </div>
-
-  </div>
+        </button>
+      </div>
+    </div>
   );
 }
 export default AllFilters;

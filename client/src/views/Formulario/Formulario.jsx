@@ -1,25 +1,24 @@
 import React from "react";
-import style from "./form.module.css"
+import style from "./form.module.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { allcountries } from "../../Redux/actions";
 import { useEffect } from "react";
-import validate from "./validate"
+import validate from "./validate";
 
 function Formulario() {
   const dispatch = useDispatch();
   const country = useSelector((state) => state.country);
 
-  const [errors,setErrors] = useState ({
+  const [errors, setErrors] = useState({
     name: "",
     dificultad: "",
     duración: "",
     temporada: "",
     CountryIds: "",
-
-  })
+  });
   useEffect(() => {
     if (country.length === 0) {
       dispatch(allcountries());
@@ -38,7 +37,7 @@ function Formulario() {
     const property = event.target.name;
     const value = event.target.value;
     setForm({ ...form, [property]: value });
-   setErrors( validate({...form,[property]:value}))
+    setErrors(validate({ ...form, [property]: value }));
   };
 
   const submitHandler = (event) => {
@@ -50,10 +49,11 @@ function Formulario() {
       !form.temporada ||
       !form.CountryIds
     ) {
-      return alert('Complete correctamente el formulario antes de enviarlo');
+      return alert(
+        "Complete correctamente el formulario antes de enviarlo"
+      );
     }
-    
-    
+
     axios
       .post("/Activity/", {
         name: form.name,
@@ -87,19 +87,19 @@ function Formulario() {
   };
 
   return (
-    <div>
+    <div className={style.formulario}>
+
+    <div className={style.container}>
       <form>
         <div>
-
-        <label>Nombre</label>
-        <input
-          type="text"
-          value={form.name}
-          name="name"
-          onChange={changeHandler}
+          <label>Nombre</label>
+          <input
+            type="text"
+            value={form.name}
+            name="name"
+            onChange={changeHandler}
           />
-
-          {errors.name && (<span>{errors.name}</span>)}
+          {errors.name && <span>{errors.name}</span>}
         </div>
         <label>Dificultad</label>
         <input
@@ -107,7 +107,7 @@ function Formulario() {
           value={form.dificultad}
           name="dificultad"
           onChange={changeHandler}
-          />
+        />
         <label>Duración</label>
         <input
           type="time"
@@ -120,19 +120,16 @@ function Formulario() {
           value={form.temporada}
           name="temporada"
           onChange={changeHandler}
-        >
+          >
           <option value="verano">Verano</option>
           <option value="otoño">Otoño</option>
           <option value="invierno">Invierno</option>
           <option value="primavera">Primavera</option>
         </select>
-        {errors.temporada && (
-          <span>{errors.temporada}</span>
-        )}
+        {errors.temporada && <span>{errors.temporada}</span>}
         <label>paises</label>
         <select onChange={(event) => handleId(event)}>
           <option value="-"></option>
-
           {country.map((t) => (
             <option value={t.id} key={t.id}>
               {t.name}
@@ -140,14 +137,14 @@ function Formulario() {
           ))}
         </select>
         <div>
-          <button onClick={(event) => submitHandler(event)}
-          >Submit</button>
+          <button onClick={(event) => submitHandler(event)} className={style.button}>Submit</button>
         </div>
       </form>
+    </div>
       <Link to="/home">
         <button>home</button>
       </Link>
-    </div>
+          </div>
   );
 }
 

@@ -1,83 +1,46 @@
+  /* Estilos para los filtros */
+  .div {
+    display: flex;
+    align-items: center;
+    margin: 5px;
+  }
+  .caja{
+    padding: 10px;
+/*     background-color: beige;
+ */    width: 500px; 
+    height: 130px;
+  margin-left: 150px
+    ;
+  }
+  .div > div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 90px;
+  }
 
-.cajafilter {
-  display: inline-block;
-  margin-left: 20px;
-  margin-top: 20px;
-  width: 40%;
-  padding: 10px;
-  border: 7px bold rgb(29, 29, 28);
-  box-sizing: border-box;
+  .span {
+    padding-left: 20px;
+    color: rgb(209, 209, 190);
+    font-weight: bold;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
   }
-  .filters {
-      display: flex;
-      color: rgb(6, 6, 75);
-      font-style: italic;
-      font-weight: 500;    
-      text-shadow: 6px 4px 5px rgba(0,0,0,0.43);
-      padding: 10px 3px 0px;
-  }
-  
+
   .select {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      margin-top:30px;
-      background-color: blueviolet;
+    background-color: #d2b48c;
+    border: none;
+    padding: 5px;
+    margin-left: 5px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
   }
-  .filterContainer {
-      margin-right: 20px; 
-      margin-bottom: 20px;
-  
-    }
-    
-    
-    .titleFilter {
-      font-size: 20px;
-      text-align: left;
-      background-color: #c4b461;  
-      border-radius: 7px;
-    }
-    span {
-      margin-right: 9px; 
-    }
-    
-    select {
-      border: 2px solid #11120d;
-      line-height: 2.5; 
-      padding:12px; 
-    }
-    
-    
-    .resetButton {
-      background-color: #abcdcb;
-      border: 2px bold rgb(62, 59, 59);
-      color: #272626;
-      padding: 5px 10px;
-      border-radius: 5px;
-      outline: none;
-      cursor: pointer;
-      width: 235px;
-      display: flex;
-      margin-left: 30px;
-      font-weight: bold;
-      font-size: 25px;
-  
-    }
-    
-    .resetButton:hover {
-      background-color:#ff5d6c;
-      color: antiquewhite;
-      font-size: 25px;
-      font-weight: bold;
-      text-align: center;
-      width: 235px;
-      margin-left: 30px;
-      padding: 12px 5px;
-      border: 2px bold rgb(62, 59, 59);
-  
-  
-    }
-    
-    
-    
+
+  .button {
+    background-color: #d2b48c;
+    border: none;
+    padding: 10px 10px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+  }
+
+.button:active {
+    background-color: #b8860b;
+  }

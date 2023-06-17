@@ -1,7 +1,22 @@
 .cardc {
-    width: 85vw;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap: 30px;
+    grid-gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 1200px;
+    padding: 20px;
+  }
+
+  
+
+ 
+  .cardc .card:nth-child(7),
+  .cardc .card:nth-child(5) {
+    border: 1px solid yellow;
+  }
+
+
+  .cardc .card:nth-child(9),
+  .cardc .card:nth-child(10) {
+    border: 1px solid yellow;
   }

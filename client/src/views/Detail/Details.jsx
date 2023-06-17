@@ -17,9 +17,9 @@ function Details() {
   useEffect(() => {}, [details]);
 
   return (
-    <div>
+    <div className={style.container}>
       <div>
-      <div>
+      <div className={style.img}>
         <img
           className={style.banderad}
           src={details.imagen}

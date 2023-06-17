@@ -29,13 +29,16 @@ function Home() {
   }, []);
   return (
     <div className={style.body}>
+      <header className={style.header}
+      >      
+      <SearchName setpages ={setPages}  />
+      </header>
       <AllFilters/>
       <Paginado
         CountryPage={CountryPage}
         countries={ countries.length}
         pagination={pagination}
         />
-      <SearchName    setpages ={setPages}  />
       <CardsContainer tencountry={tencountry} />
 
     </div>

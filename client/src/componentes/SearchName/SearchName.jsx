@@ -24,7 +24,7 @@ export default function SearchName({setpages}) {
         className={style.searchInput}
         type="text"
         value={name}
-        placeholder="search recipe by name"
+        placeholder="search country by name"
         onChange={(event) => handleChange(event)}
       />
       <button
@@ -32,7 +32,7 @@ export default function SearchName({setpages}) {
         type="submit"
         onClick={() => searchName(name)}
         >
-        SEARCH
+        BUSCAR
       </button>
     </div>
   )

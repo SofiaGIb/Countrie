@@ -9,7 +9,7 @@ function Card({ id, name, imagen, continente }) {
           <img className={style.image} src={imagen} />
         </div>
       <Link to={`/Detail/${id}`}>
-        <h2> {name}</h2>
+        <h2 className={style.texto}> {name}</h2>
         <div>
           <h4>continente:{continente}</h4>
         </div>
