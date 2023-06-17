@@ -1,77 +1,46 @@
 .pagination {
-    justify-content: center;
-    align-items: center;
-    margin-top: 1rem;
-  }
-  
-  .pages {
-    display: flex;
-    align-items: center;
-    list-style-type: none;
-    padding: 1px 5px;
-    background-color: rgb(254, 254, 248);
-    box-shadow: 9px 10px 7px #ac9742;
-    border-radius: 7px;
-  }
-  
-  .pages a:hover {
-    background-color: #49cead;
-    color: rgb(231, 218, 218);
-  }
-  
-  .page {
-    list-style-type: none;
-  }
-  
-  .pageBtn {
-    cursor: pointer;
-    align-items: center;
-    justify-content: center;
-    background-color: transparent;
-    border-color: rgb(231, 218, 218);
-    box-shadow: 4px 5px 3px rgb(112, 44, 44);
-    color: rgb(6, 6, 75);
-    font-style: italic;
-    font-weight: 20;
-    text-shadow: 19px 20px 20px rgba(0, 0, 0, 0.43);
-    border-radius: 45px;
-    height: 40px;
-    width: 40px;
-    font-size: 20px;
-    line-height: 20px;
-    font-weight: 500;
-    margin: 0 10px;
-  }
-  
-  .pageBtn:hover {
-    background-color: #ce5249;
-    color: rgb(231, 218, 218);
-  }
-  
-  .container {
-    justify-content: center;
-    border-radius: 50%;
-    height: 2rem;
-    width: 2rem;
-    border: 1px solid #f6eedf;
-    margin-bottom: 1rem;
-    cursor: pointer;
-    font-size: 1.6rem;
-    margin-top: 1rem;
-    background-color: transparent;
-  }
-  
-  .container:hover {
-    background-color: #f6eedf;
-  }
-  
-  .container:active {
-    transform: scale(0.9);
-  }
-  
-  .current-page {
-    font-weight: bold;
-    font-size: 24px;
-    margin: 0 10px;
-  }
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.page {
+  display: flex;
+  align-items: center;
+}
+
+.pageBtn {
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border-color: rgb(231, 218, 218);
+  box-shadow: 4px 5px 3px rgb(112, 44, 44);
+  color: rgb(6, 6, 75);
+  font-style: italic;
+  font-weight: 20;
+  text-shadow: 19px 20px 20px rgba(0, 0, 0, 0.43);
+  border-radius: 45px;
+  height: 40px;
+  width: 40px;
+  font-size: 20px;
+  line-height: 20px;
+  font-weight: 500;
+  margin: 0 10px;
+}
+
+.pageBtn:hover {
+  background-color: #ce5249;
+  color: rgb(231, 218, 218);
+}
+
+.currentPageBtn {
+  background-color: #ce5249;
+  color: rgb(231, 218, 218);
+}
+
+.pageBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

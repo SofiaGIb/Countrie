@@ -53,9 +53,6 @@ function Formulario() {
       return alert('Complete correctamente el formulario antes de enviarlo');
     }
     
-    if (Object.keys(errors).length !== 0) {
-      return alert('Corrija los errores antes de enviar el formulario');
-    }
     
     axios
       .post("/Activity/", {
@@ -102,7 +99,7 @@ function Formulario() {
           onChange={changeHandler}
           />
 
-          {errors.name && <span>{errors.name}</span>}
+          {errors.name && (<span>{errors.name}</span>)}
         </div>
         <label>Dificultad</label>
         <input

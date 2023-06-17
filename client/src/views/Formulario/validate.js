@@ -3,16 +3,15 @@
  const validate = (form)=>{
     let errors ={};
     
-	let dif = Number(form.dificultad);
+	let dif = Number(form.dificultad);  
 	let dur = Number(form.duracion);
 
 
-    if(form.name.length === 0 ){
-        if(form.name) errors.name = 'Campo Necesario';
+    
+        if(!form.name) errors.name = 'Campo Necesario';
         else if (/[^A-Za-z0-9 ]+/g.test(form.name))
         errors.name =
             'EL nombre no debe contener caracteres especiales o tildes';
-}
 if (!form.dificultad) errors.dificultad = 'Campo Necesario';
 else if (dif <= 0 || dif > 5) errors.dificultad = 'Debe ser entre 1 y 5';
 
