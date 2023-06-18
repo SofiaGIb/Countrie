@@ -56,47 +56,54 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         country: action.payload,
       };
-    case FILTER_BY_ACTIVITY:
-  		const allCountries2 = state.country;
+      case FILTER_BY_ACTIVITY:
+        const selectedActivity = action.payload;
+        const allCountries2 = state.allCountries;
+  
+        const solo = allCountries2.filter((pais) => {
+          return pais.Activities.length > 0;
+        });
+  
+        let array = [];
+  
+        for (let i = 0; i < solo.length; i++) {
+          for (let j = 0; j < solo[i].Activities.length; j++) {
+            if (solo[i].Activities[j].name === selectedActivity) {
+              array.push(solo[i]);
+              break;
+            }
+          }
+        }
+  
+        const filtro = selectedActivity === "Todos" ? allCountries2 : array;
+  
+        return {
+          ...state,
+          country: filtro,
+          activity: array, 
+        };
 
-			const solo = allCountries2.filter((pais) => {
-				return pais.Activities.length > 0;
-			});
+    case BY_POPULATION:
+      let sortedArrPop =
+        action.payload === "mayp"
+          ? [...state.country].sort((a, b) => a.poblacion - b.poblacion)
+          : [...state.country].sort((a, b) => b.poblacion - a.poblacion);
 
-			let array = [];
+      return {
+        ...state,
+        country: sortedArrPop,
+      };
 
-			for (let i = 0; i < solo.length; i++) {
-				for (let j = 0; j < solo[i].Activities.length; j++) {
-					if (solo[i].Activities[j].name === action.payload) {
-						array.push(solo[i]);
-					}
-				}
-			}
-    
-
-case BY_POPULATION:
-  let sortedArrPop =
-    action.payload === 'mayp'
-      ? [...state.country].sort((a, b) => a.poblacion - b.poblacion)
-      : [...state.country].sort((a, b) => b.poblacion - a.poblacion);
-
-  return {
-    ...state,
-    country: sortedArrPop,
-  };
-
-  case BY_CONTINENT:
-    const allCountries = state.allCountries;
-    const continentFilter =
-      action.payload === 'All'
-        ? allCountries
-        : allCountries.filter(
-            (e) => e.continente === action.payload
-          );
-    return {
-      ...state,
-      country: continentFilter,
-    };
+    case BY_CONTINENT:
+      const allCountries = state.allCountries;
+      const continentFilter =
+        action.payload === "All"
+          ? allCountries
+          : allCountries.filter((e) => e.continente === action.payload);
+      return {
+        ...state,
+        country: continentFilter,
+      };
 
     default:
       return state;

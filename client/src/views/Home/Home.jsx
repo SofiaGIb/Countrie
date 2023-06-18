@@ -33,7 +33,7 @@ function Home() {
       >      
       <SearchName setpages ={setPages}  />
       </header>
-      <AllFilters/>
+      <AllFilters setpages ={setPages}  />
       <Paginado
         CountryPage={CountryPage}
         countries={ countries.length}

@@ -6,7 +6,7 @@ export const GET_COUNTRIES = "GET_COUNTRIES";
 
 export const allcountries = ()=>{
 return async function (dispatch) {
-const response = await axios.get('/Country/');
+const response = await axios.get('/Country/',{});
 
 const countrydata = response.data;
 dispatch({

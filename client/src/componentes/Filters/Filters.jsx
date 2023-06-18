@@ -11,21 +11,23 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 
-function AllFilters() {
+function AllFilters({setpages}) {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(allActivities());
     dispatch(allcountries());
   }, [dispatch]);
 
-  const countries = useSelector((state) => state.country);
   //filter activities
   const [activity, setActivity] = useState("");
   const activities = useSelector((state) => state.activities);
   const handleActivity = (event) => {
     const selectedActivity = event.target.value;
+    setActivity(selectedActivity);
     dispatch(filterByAct(selectedActivity));
+    setpages(1);
   };
+  const countries = useSelector((state) => state.country);
   // refresh filtro
   function handleClearFilters() {
     setPopulation("All");
@@ -102,27 +104,43 @@ function AllFilters() {
           <option value={continente === "Oceania" ? continente : "Oceania"}>
             Oceanía
           </option>
+          <option
+            value={continente === "Antarctic" ? continente : "Antarctic"}
+          >
+            Antárctica
+          </option>
         </select>
       </div>
 
       <div className={style.div}>
-        <span className={style.span}> Activity : </span>
-        
+        <span className={style.span}> Activity   :  </span>
+          {activities.length === 0 ? (
+            <p>No se han creado actividades</p>
+          ) : (
+            <select
+              className={style.select}
+              onChange={(event) => handleActivity(event)}
+              value={activity}
+            >
+              <option value={activity === "Todos" ? activity : "Todos"}>
+                Todas
+              </option>
+              <option value={activity === "none" ? activity : "none"}></option>
+              N
+              {activities.map((e) => (
+                <option
+                  value={activity === e.name ? activity : e.name}
+                  key={e.id}
+                >
+                  {e.name}
+                </option>
+              ))}
+            </select>
+          )}
+
+        <span className={style.span}>poblacion </span>
         <select
-          onChange={(event) => handleActivity(event)}
-          className={style.select}
-          value={activity}
-        >
-         
-          {activities.map((ac) => (
-            <option key={ac.id} value={ac.name}>
-              {ac.name}
-            </option>
-          ))}
-        </select> 
-        <span className={style.span}>Poblacion: </span>
-        <select
-          onChange={(e) => handleSortPop(e)}
+          onChange={(event) => handleSortPop(event)} 
           value={population}
           className={style.select}
         >
