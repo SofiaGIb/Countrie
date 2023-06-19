@@ -61,6 +61,9 @@ font-family: cooldex;
 .texto{
   text-align: center;
   font-family: cooldex;
+  font-weight: bold;
+  background-color: #8a8983;
+
 }
 
 .buttoncontainer{
@@ -91,5 +94,23 @@ font-weight: bold;
   }
 .textto2{
     font-family: cooldex;
-
+    
   }
+  .name{
+    text-align: center;
+    text-decoration: #c9a309;
+    font-size: 20px;    
+    font-family: cooldex;
+  }
+  
+  .textoA{
+    text-align: center;
+  font-family: cooldex;
+  font-size: 29px; 
+  font-weight: bold; 
+  text-decoration: underline; 
+  background-color: rgb(27, 181, 53);
+  color: #d2d2e5;
+  
+
+}

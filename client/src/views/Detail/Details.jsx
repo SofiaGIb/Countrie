@@ -41,12 +41,12 @@ function Details() {
         
       </div>
       <div>
-        <h3 className={style.texto}>Actividad</h3>
+        <h2 className={style.textoA}>ACTIVIDADES:</h2>
         {details.Activities && details.Activities.length ? (
           details.Activities?.map((elem) => {
             return (
               <div key={elem.id}>
-                <h4>{elem.name}</h4>
+                <h4 className={style.name}>{elem.name}</h4>
                 <p className={style.texto}>Dificultad: {elem.dificultad}</p>
                 <p className={style.texto}>Duración: {elem.duracion} horas</p>
                 <p className={style.texto}>Temporada: {elem.temporada}</p>

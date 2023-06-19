@@ -136,6 +136,8 @@ function Formulario() {
             </option>
           ))}
         </select>
+        {errors.CountryIds && <span>{errors.CountryIds}</span>}
+
         <div>
           <button onClick={(event) => submitHandler(event)} className={style.button}>Submit</button>
         </div>
