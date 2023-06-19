@@ -80,14 +80,16 @@ function AllFilters({setpages}) {
           <option value="AtoZ">A-Z</option>
           <option value="ZtoA">Z-A</option>
         </select>
+        <div className={style.f5}>
+
         <span className={style.span}> Continente: </span>
         <select
           className={style.select}
           onChange={(event) => handleFilteredCountrie(event)}
           value={continente}
-        >
+          >
           <option value={continente === "All" ? continente : "All"}>
-            Todos
+            All
           </option>
           <option value={continente === "Americas" ? continente : "Americas"}>
             Americas
@@ -106,10 +108,11 @@ function AllFilters({setpages}) {
           </option>
           <option
             value={continente === "Antarctic" ? continente : "Antarctic"}
-          >
+            >
             Antárctica
           </option>
         </select>
+            </div>
       </div>
 
       <div className={style.div}>
@@ -123,7 +126,7 @@ function AllFilters({setpages}) {
               value={activity}
             >
               <option value={activity === "Todos" ? activity : "Todos"}>
-                Todas
+                All
               </option>
               <option value={activity === "none" ? activity : "none"}></option>
               N
@@ -137,15 +140,16 @@ function AllFilters({setpages}) {
               ))}
             </select>
           )}
+<div className={style.f4}>
 
-        <span className={style.span}>poblacion </span>
+        <span className={style.span}>Poblacion:</span>
         <select
           onChange={(event) => handleSortPop(event)} 
           value={population}
           className={style.select}
-        >
+          >
           <option value={population === "All" ? population : "All"}>
-            Todos
+            All
           </option>
           <option value={population === "mayp" ? population : "mayp"}>
             Menor a Mayor
@@ -154,6 +158,7 @@ function AllFilters({setpages}) {
             Mayor a Menor
           </option>
         </select>
+          </div>
       </div>
 
       <div>

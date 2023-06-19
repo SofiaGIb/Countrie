@@ -8,9 +8,10 @@ function Landing() {
     <div >
       <div className={style.img}>
       <Link to="/Home">
-        <button>Home</button>
+        <button className={style.button}>GO</button>
       </Link>
       </div>
+      <p className={style.texto}> <h2>En esta web Descubriremos a la variedades de paises que tenemos en el mundo y las diversas actividades que podemos realizar en ellos </h2></p>
 
     </div>
   );

@@ -21,19 +21,22 @@ export default function SearchName({setpages}) {
   return (
         <div className={style.search}>
       <input
-        className={style.searchInput}
+        className={style.Input}
         type="text"
         value={name}
         placeholder="search country by name"
         onChange={(event) => handleChange(event)}
       />
+    <div>
+
       <button
         className={style.searchButton}
         type="submit"
         onClick={() => searchName(name)}
         >
-        BUSCAR
+       SEARCH
       </button>
+          </div>
     </div>
   )
 }

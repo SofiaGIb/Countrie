@@ -10,13 +10,3 @@
   
 
  
-  .cardc .card:nth-child(7),
-  .cardc .card:nth-child(5) {
-    border: 1px solid yellow;
-  }
-
-
-  .cardc .card:nth-child(9),
-  .cardc .card:nth-child(10) {
-    border: 1px solid yellow;
-  }

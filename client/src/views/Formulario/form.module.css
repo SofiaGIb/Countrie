@@ -1,5 +1,5 @@
 .formulario {
-background-image: url("../../img/Untitled.png");
+background-image: url("../../img/landingg.png");
 position: relative;
 background-size: cover;
 background-position: center;
@@ -28,6 +28,7 @@ margin-left: 305px;
   
   .container label {
     margin-top: 10px;
+    font-family: cooldex;
   }
   
   .container input,
@@ -36,6 +37,7 @@ margin-left: 305px;
     padding: 5px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    font-family: cooldex;
   }
   
   .container button {
@@ -46,6 +48,7 @@ margin-left: 305px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    font-family: cooldex;
   }
   
   .container button:active {
@@ -58,7 +61,7 @@ margin-left: 305px;
   }
   
 .button{ 
-  
+  font-family: cooldex;
   padding: 15px;
   margin-top: 38px;
 margin-left: 200px;

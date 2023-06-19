@@ -1,46 +1,66 @@
-  /* Estilos para los filtros */
   .div {
     display: flex;
     align-items: center;
     margin: 5px;
   }
   .caja{
-    padding: 10px;
-/*     background-color: beige;
- */    width: 500px; 
-    height: 130px;
-  margin-left: 150px
+    padding: 2px;
+    width: 400px; 
+    height: 100px;
+    margin-left: 700px
     ;
+    margin-top: -1px;
   }
   .div > div {
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-top: 90px;
+    margin-top: 1px;
   }
-
+  
   .span {
-    padding-left: 20px;
-    color: rgb(209, 209, 190);
+    background-color: rgba(80, 59, 198, 0.8);
+    padding-left: 10px;
+    color: rgb(227, 227, 215);
     font-weight: bold;
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+    font-family: cooldex
   }
-
+  
   .select {
-    background-color: #d2b48c;
+    background-color: rgba(246, 172, 34, 0.9);
     border: none;
-    padding: 5px;
-    margin-left: 5px;
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+    box-shadow: 2px 2px 2px rgba(255, 249, 249, 0.5);
+    font-family: cooldex
   }
-
+  
   .button {
-    background-color: #d2b48c;
-    border: none;
-    padding: 10px 10px;
+    border: 4px solid rgb(56, 62, 130);
+    font-weight: bold;
+    color: rgb(22, 22, 20);
+    background-color: #e39b3b;
+    padding: 7px 10px;
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+    font-family: cooldex;
+    margin-top: 12px;
+    margin-left: 127px;
+    
+    
   }
+  
+  .f4{
+    margin-left: 12px;
+    margin-top: 18px;
+  padding: px;
+}
+  .f5{
+    margin-left: 12px;
+    margin-top: 18px;
+  padding: 5px;
+}
+
 
 .button:active {
     background-color: #b8860b;
+  padding: 2px;
   }

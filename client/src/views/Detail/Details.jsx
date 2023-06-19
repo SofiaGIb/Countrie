@@ -17,6 +17,7 @@ function Details() {
   useEffect(() => {}, [details]);
 
   return (
+    <div className={style.ttl}>
     <div className={style.container}>
       <div>
       <div className={style.img}>
@@ -53,11 +54,11 @@ function Details() {
             );
           })
         ) : (
-          <p>
+          <p className={style.textto1}>
             No existe actividad en este pais aun
             <Link to="/Create">
               {" "}
-              <h2>Crea una actividad</h2>{" "}
+              <h2 className={style.textto2}>Crea una actividad</h2>{" "}
             </Link>
           </p>
         )}
@@ -67,6 +68,7 @@ function Details() {
           <button className={style.buttoncontainer}>GO BACK </button>
         </Link>
       </div>
+    </div>
     </div>
   );
 }

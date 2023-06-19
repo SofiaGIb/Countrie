@@ -4,14 +4,16 @@
     align-items: center;
     background: transparent;
     border-radius: 15px ;
-    box-shadow: 2px 2px 3px 
-    rgba(255, 255, 255, 0.15);
+    box-shadow: 1px 1px 1px 
+    rgba(161, 131, 131, 0.15);
     background:rgb(198, 143, 4);
     opacity: .9;
     margin-top: 138px;
-    margin-left: 705px;
+    margin-left: 547px;
     text-align: center;
-    width: 11%;
+    width: 10%;
+    padding: 15px;
+    font-family: cooldex;
     
     
     }
@@ -24,7 +26,6 @@
         transform: translateX(35px);
         color: white;
         font-weight: bold;
-        letter-spacing: 2px;
     }
     
     .button .icon {
@@ -56,24 +57,31 @@
     }
     
     .search {
-        margin-left: 190px;
-        margin-top: -125px;
+        margin-top: -95px;
     }
     
-    .searchInput {
+    .Input {
         position: absolute;
-    margin-left: 157px;
+    margin-left: 7px;
         margin-bottom: 5px;
         padding-top: 21px;
         border-radius:12px;
         text-align: center;
-        width: 50%;
+        width: 48%;
     background:rgb(255, 255, 255);
     opacity: 0.7;
     border: 12px solid rgb(175, 175, 78)k;
-    font-size: 18px;
     font-weight: bold ;
     color: black;
+    background: rgb(255, 255, 255);
+    opacity: 0.7;
+    border: 8px solid rgb(66, 48, 13);
+    font-size: 13px;
+    font-weight: bold;
+    color: black;
+    font-family: cooldex;
+    font-weight: bold;
+font-size: 15px;
     
     }
     

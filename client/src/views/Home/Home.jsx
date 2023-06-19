@@ -7,6 +7,7 @@ import Paginado from "../../componentes/Paginado/Paginado";
 import { useState } from "react";
 import AllFilters from "../../componentes/Filters/Filters"
 import SearchName from "../../componentes/SearchName/SearchName";
+import NavBar from '../../componentes/NavBar/NavBar';
 function Home() {
   const countries = useSelector((state) => state.country);
   //Paginado
@@ -29,10 +30,10 @@ function Home() {
   }, []);
   return (
     <div className={style.body}>
-      <header className={style.header}
-      >      
+  <header className={style.header}>
+      <NavBar/>
+  </header>
       <SearchName setpages ={setPages}  />
-      </header>
       <AllFilters setpages ={setPages}  />
       <Paginado
         CountryPage={CountryPage}

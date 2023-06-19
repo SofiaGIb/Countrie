@@ -3,18 +3,21 @@
     display: flex;
     flex-direction: column;
     background-color:#dcaf85;
-    border:8px solid rgb(218, 115, 11);
+    border:6px solid rgb(235, 233, 231);
     border-radius: 10px;
     padding: 15px;
     cursor: pointer;
-    -moz-osx-font-smoothing: grayscale;
     backface-visibility: hidden;
     transform: translateZ(0);
     transition: transform 0.25s ease-out;
+    height: 260px;
   }
   
 .card:hover {
     transform: scale(1.10);
+    border-color: #0a385c;
+    box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+
   }
 
 .image {
@@ -30,11 +33,10 @@
   min-height: 100px;
   padding: 0;
   position: relative;
-  /* transition: all 0.3s ease-in-out; */
   width: 30%;}
   .texto{
     text-align: center; 
     font-weight: bold; 
-    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5); /* Agregar sombra al texto */
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5); 
     color: rgb(37, 35, 35); 
   }

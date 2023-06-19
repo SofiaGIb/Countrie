@@ -1,42 +1,58 @@
+
+.ttl{background-image: url('../../img/details.png');
+  display: flex;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  width: 100%;
+  height: 100%;
+opacity: 0.9;}
+
+
+
 .container {
-  border:3px solid rgb(227, 128, 28);
+  border:4px solid rgb(227, 128, 28);
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
     padding: 10px;
     border-radius: 10px;
 background-color: #d2d2e5;
-max-width: 900px;
-width: 880px;
+max-width: 575px;
+width: 580px;
 height:auto;
 margin-top: 38px;
-margin-left: 105px;
+margin-left: 195px;
+font-family: cooldex;
   }
   
   .container form {
-    display: flex;
     flex-direction: column;
+    font-family: cooldex;
   }
   
   .container label {
     margin-top: 10px; align-items: center;
+    font-family: cooldex;
   }
   
   
   .container button {
+    font-family: cooldex;
     padding: 10px;
-    background-color: #597587;
-    color: #fff;
-    border: none;
+    background-color: #e1ab22;
+    color: #242222;
     border-radius: 4px;
     cursor: pointer;
+    font-weight: bold;
   }
   
   .container button:active {
-    background-color: #2980b9;
+    background-color: #c9a309;
   }
   
   .container span {
     color: red;
     margin-top: 5px;
+    font-family: cooldex;
   }
 
 
@@ -44,7 +60,7 @@ margin-left: 105px;
 
 .texto{
   text-align: center;
-    font-family: Cute Love;
+  font-family: cooldex;
 }
 
 .buttoncontainer{
@@ -52,13 +68,28 @@ margin-left: 105px;
     align-items: flex-end;
     justify-content: flex-end;
     margin-top: auto;
-
+    font-family: cooldex;
+    margin-left: 205px;
+border: 3px solid rgb(51, 51, 134);
 }
 
 
 .img img {
-    width: 870px;
+    width: 570px;
     height: 60vh;
     margin: 0 5px;
     border: 2px solid #ccc;
+  }
+  .textto1{
+    border: 6px solid rgb(154, 160, 30);
+    text-align: center;
+    border-radius: 12px;
+
+    font-family: cooldex;
+font-size: 30px;
+font-weight: bold;
+  }
+.textto2{
+    font-family: cooldex;
+
   }

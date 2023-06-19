@@ -11,7 +11,6 @@ function App() {
 const location = useLocation()
   return (
     <div>
-{location.pathname === "/Home" && <NavBar/> }
 
 <Routes>
        <Route path="/" element={<Landing/>} />

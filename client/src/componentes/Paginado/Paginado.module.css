@@ -11,6 +11,8 @@
 }
 
 .pageBtn {
+  background-color: rgba(80, 59, 198, 0.8);
+text-align: center;
   cursor: pointer;
   align-items: center;
   justify-content: center;
@@ -19,11 +21,11 @@
   box-shadow: 4px 5px 3px rgb(112, 44, 44);
   color: rgb(6, 6, 75);
   font-style: italic;
-  font-weight: 20;
+  font-weight: 15;
   text-shadow: 19px 20px 20px rgba(0, 0, 0, 0.43);
   border-radius: 45px;
-  height: 40px;
-  width: 40px;
+  height: 35px;
+  width: 10px;
   font-size: 20px;
   line-height: 20px;
   font-weight: 500;
@@ -31,12 +33,12 @@
 }
 
 .pageBtn:hover {
-  background-color: #ce5249;
+  background-color: rgba(184, 176, 225, 0.8);
   color: rgb(231, 218, 218);
 }
 
 .currentPageBtn {
-  background-color: #ce5249;
+  background-color: rgba(120, 119, 127, 0.8);
   color: rgb(231, 218, 218);
 }
 

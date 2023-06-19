@@ -1,5 +1,5 @@
 #root {
-  max-width: 1280px;
+  max-width: 120px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
@@ -40,6 +40,13 @@
 .read-the-docs {
   color: #888;
 }
-*{  padding: 0;
+*{  font-family: Another Fool;
+  padding: 0;
   margin: 0;
   text-decoration: none !important;}
+/*   font-family: cooldex;
+ */
+ .navbar a {
+  border: none;
+ }
+ 
