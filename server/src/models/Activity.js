@@ -12,8 +12,19 @@ module.exports = (sequelize) => {
         allowNull: false,
       },
       name: {
-        type: DataTypes.TEXT,
+        type: DataTypes.STRING(15),
         allowNull: false,
+        validate: {
+          isAlpha: {
+            args: true,
+            msg: 'El nombre no debe contener números ni símbolos'
+          },
+          len: {
+            args: [1, 15],
+            msg: 'La longitud del nombre debe ser entre 1 y 15 caracteres',
+          },
+        
+        }
       },
 
       dificultad: {

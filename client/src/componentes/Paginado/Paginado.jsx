@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import style from './paginado.module.css';
 
 function Paginado({ pagination, CountryPage, countries }) {
-  const [currentPage, setCurrentPage] = useState(CountryPage);
+  const [currentPage, setCurrentPage] = useState(1); // Establecer currentPage en 1
 
   const paginado = [];
   for (let i = 1; i <= Math.ceil(countries / CountryPage); i++) {

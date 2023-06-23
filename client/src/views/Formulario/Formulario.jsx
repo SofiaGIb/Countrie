@@ -107,20 +107,23 @@ function Formulario() {
           value={form.dificultad}
           name="dificultad"
           onChange={changeHandler}
-        />
+          />
+          {errors.dificultad && <span>{errors.name}</span>}
         <label>Duración</label>
         <input
           type="time"
           value={form.duración}
           name="duración"
           onChange={changeHandler}
-        />
+          />
+          {errors.duración && <span>{errors.duración}</span>}
         <label>Temporada</label>
         <select
           value={form.temporada}
           name="temporada"
           onChange={changeHandler}
           >
+            <option value="temporada"></option>
           <option value="verano">Verano</option>
           <option value="otoño">Otoño</option>
           <option value="invierno">Invierno</option>

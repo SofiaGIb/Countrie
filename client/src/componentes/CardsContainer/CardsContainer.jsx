@@ -6,7 +6,7 @@ function CardsContainer({tencountry}) {
   const countries = useSelector(state =>state.country) 
   return (
     <div className={style.cardc}>
-      { tencountry?(tencountry.map((countries)=>{       
+      { !countries ?( <h3>pais no encontrado</h3>  ):(tencountry.map((countries)=>{       
          return (  <Card
         id ={countries.id}
         key ={countries.id}
@@ -18,8 +18,7 @@ function CardsContainer({tencountry}) {
 
 
 
-      })): ( 
-        <h1>Cargando</h1>)}
+      }))}
 
     </div>
   )

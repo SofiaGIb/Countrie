@@ -125,3 +125,13 @@ font-size: 15px;
             scale(1.1);
         }
     }
+    .errorMessage {
+        display: inline-block;
+        background-color: red;
+        color: white;
+        font-weight: bold;
+        font-size: small;
+        padding: 5px;
+        border-radius: 5px;
+        margin: 5px 0;
+      }

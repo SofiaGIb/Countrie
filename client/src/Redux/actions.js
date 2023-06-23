@@ -16,7 +16,7 @@ dispatch({
 
 }
 }
-//NOS TRAE EL DETALLE DE LSO PAISES
+//NOS TRAE EL DETALLE DE LOS PAISES
 
 export const DETAIL_COUNTRY = "DETAIL_COUNTRY";
 
@@ -35,15 +35,19 @@ dispatch({
 
  export const COUNTRY_NAME = "COUNTRY_ NAME";
  export const country_by_name = (name) =>{
+   return async function (dispatch){
 
-    return async function (dispatch){
-        const response = await axios.get(`/Country/name?name=${name}`)
-        const dataName = response.data
-        dispatch({
-            type : COUNTRY_NAME,
-            payload : dataName
-        })
-    }
+  
+  const response = await axios.get(`/Country/name?name=${name}`)
+  
+  const dataName = response.data
+  dispatch({
+    type : COUNTRY_NAME,
+    payload : dataName
+  })
+
+  console.log("PAIS NO ENCONTRADO");
+}
  }
 
  // CREA UNA NUEVA ACTVIDAD 

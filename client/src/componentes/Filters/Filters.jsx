@@ -30,14 +30,19 @@ function AllFilters({setpages}) {
   const countries = useSelector((state) => state.country);
   // refresh filtro
   function handleClearFilters() {
-    setPopulation("All");
-    setContinente("All");
+ setPopulation("Order By");
+   setContinente("All");
     setActivity("All");
-
+    setSort("Order By")
+    setpages(1)
     return dispatch(allcountries());
   }
   // orden alfabetico
+  const [sort, setSort] = useState("");
+
   const handleSortChange = (event) => {
+    setSort(event.target.value);
+
     if (event.target.value === "AtoZ") {
       const sortedCountries = countries
         .slice()
@@ -68,11 +73,12 @@ function AllFilters({setpages}) {
   return (
     <div className={style.caja}>
       <div className={style.div}>
-        <span className={style.span}>Filter By : </span>
+        <span className={style.span}>Filter By :</span>
         <select
           className={style.select}
-          defaultValue="Order By"
-          onChange={handleSortChange}
+np
+         onChange={(event)=>handleSortChange(event)}
+
         >
           <option value="Order By" disabled="disabled">
             Order By
@@ -82,7 +88,7 @@ function AllFilters({setpages}) {
         </select>
         <div className={style.f5}>
 
-        <span className={style.span}> Continente: </span>
+        <span className={style.span}> Continente : </span>
         <select
           className={style.select}
           onChange={(event) => handleFilteredCountrie(event)}
@@ -116,7 +122,7 @@ function AllFilters({setpages}) {
       </div>
 
       <div className={style.div}>
-        <span className={style.span}> Activity   :  </span>
+        <span className={style.span}> Activity :  </span>
           {activities.length === 0 ? (
             <p>No se han creado actividades</p>
           ) : (
@@ -142,14 +148,14 @@ function AllFilters({setpages}) {
           )}
 <div className={style.f4}>
 
-        <span className={style.span}>Poblacion:</span>
+        <span className={style.span}>Poblacion :</span>
         <select
           onChange={(event) => handleSortPop(event)} 
           value={population}
           className={style.select}
           >
           <option value={population === "All" ? population : "All"}>
-            All
+            Order By
           </option>
           <option value={population === "mayp" ? population : "mayp"}>
             Menor a Mayor
