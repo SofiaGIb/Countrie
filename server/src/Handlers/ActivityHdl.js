@@ -14,9 +14,9 @@ const GetActivity=  async (req,res) =>{
 
 const PostActivity = async ( req,res) => {
 
-const {name,dificultad,duracion,temporada,CountryIds} = req.body;
+const {name,dificultad,duracion,temporada,CountryIds,costo} = req.body;
 try {
-    const newActivity = await createActivity(name,dificultad,duracion,temporada,CountryIds);
+    const newActivity = await createActivity(name,dificultad,duracion,temporada,CountryIds,costo);
     res.status(200).json("creado exitosamente :" + newActivity);
     
 } catch (error) {

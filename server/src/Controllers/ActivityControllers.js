@@ -6,11 +6,11 @@ const allActivity =  async()=>{
     return activities;
 };
 
-const createActivity =  async(name,dificultad,duracion,temporada,CountryIds)=>{
+const createActivity =  async(name,dificultad,duracion,temporada,CountryIds,costo)=>{
     if (!name ) {
         throw new Error("Debe proporcionar un nombre para la actividad");
       }
-const newActivity = await Activity.create({name,dificultad,duracion,temporada});
+const newActivity = await Activity.create({name,dificultad,duracion,temporada,costo});
 await newActivity.setCountries(CountryIds)
 return newActivity
 };
